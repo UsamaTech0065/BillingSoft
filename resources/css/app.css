@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-brand: #4169E2;
+    --color-pay: #16a34a;
+    --color-pay-hover: #15803d;
+    --color-advance: #d97706;
+}
+
+/* Guaranteed visible payment buttons (not dependent on Tailwind purge) */
+.btn-pay-smart {
+    background-color: #16a34a;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.btn-pay-smart:hover {
+    background-color: #15803d;
+}
+.btn-advance {
+    background-color: #d97706;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.btn-advance:hover {
+    background-color: #b45309;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.modal-overlay.hidden {
+    display: none !important;
+}
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.5);
+}
+.modal-box {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 28rem;
+    padding: 1.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
+}
